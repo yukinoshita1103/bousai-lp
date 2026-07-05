@@ -99,6 +99,29 @@ h1{text-shadow:0 18px 45px rgba(0,0,0,.3)}
   .hero-proof .proof-item>*{min-width:0;max-width:100%}
   .hero-proof .proof-item strong{font-size:clamp(18px,5.4vw,20px);line-height:1.35;word-break:normal;overflow-wrap:break-word}
 }
+
+/* Mobile safety net: prevent every section from creating a wider canvas on iOS Safari. */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body{position:relative}
+main,.site-header,section,.container,.nav{max-width:100%;min-width:0}
+.container{width:min(1160px,100%)}
+img,video,svg{max-width:100%;height:auto}
+.split>*,.process-grid>*,.diagnosis-grid>*,.sample-box>*,.report-grid>*,.voice-grid>*,.option-grid>*,.price-grid>*,.faq-grid>*,.cta-inner>*,.reason-grid>*,.profile-card>*,.profile-points>*{min-width:0;max-width:100%}
+@media(max-width:1024px){
+  .hero-proof,.split,.process-grid,.diagnosis-grid,.sample-box,.report-grid,.voice-grid,.option-grid,.price-grid,.faq-grid,.cta-inner,.trust-grid,.reason-grid,.profile-card,.profile-points{grid-template-columns:minmax(0,1fr)!important}
+  .hero{min-height:auto}
+  .hero-inner{padding:58px 20px 72px;overflow:hidden}
+  main section{padding:64px 20px}
+  .price-card.featured{transform:none}
+  .profile-media{width:100%;max-width:280px}
+}
+@media(max-width:640px){
+  .nav{padding:0 16px}
+  .brand span:last-child{font-size:14px}
+  .hero-actions .btn,.cta .btn{width:100%}
+  .warning-panel,.plain-panel,.reason-panel,.sample-panel,.price-card,.profile-card,.voice-card,.option-card,.faq-item{padding:22px}
+  .section-head,.lead,.hero-copy{max-width:100%}
+}
 @page{size:A4;margin:10mm}
 @media print{
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
