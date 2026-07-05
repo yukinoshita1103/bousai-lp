@@ -1,143 +1,132 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>そなえコンシェルジュ｜家族に合わせた防災備蓄リスト作成・購入代行</title>
-  <meta name="description" content="家族構成・住まい・働き方に合わせて、本当に必要な防災備蓄品をリスト化。希望者には購入代行まで対応します。" />
-  <meta property="og:title" content="そなえコンシェルジュ｜家族に合わせた防災備蓄" />
-  <meta property="og:description" content="何をどれだけ備えればいいか分からないご家庭へ。防災備蓄リスト作成から購入代行まで。" />
-  <meta property="og:type" content="website" />
-  <style>
-    :root{
-      --green-950:#052e24;--green-900:#064536;--green-800:#0b5b47;--green-700:#0f766e;--green-600:#159c77;--green-500:#22c55e;--green-100:#dcfce7;--mint:#ecfdf5;--cream:#fff9ed;--ink:#10231d;--muted:#5f716b;--line:#d7eadf;--white:#fff;--shadow:0 24px 70px rgba(5,46,36,.18);--radius:28px
-    }
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--mint),#fff 45%,var(--cream));line-height:1.75}a{text-decoration:none;color:inherit}.container{width:min(1120px,calc(100% - 32px));margin:auto}.nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(18px);background:rgba(236,253,245,.82);border-bottom:1px solid rgba(215,234,223,.8)}.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:800}.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--green-700),var(--green-500));display:grid;place-items:center;color:white;box-shadow:0 12px 28px rgba(15,118,110,.28)}.nav-links{display:flex;gap:22px;align-items:center;font-size:14px;color:var(--muted)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 22px;font-weight:800;border:1px solid transparent;transition:.2s;cursor:pointer}.btn-primary{background:linear-gradient(135deg,var(--green-800),var(--green-500));color:white;box-shadow:0 16px 36px rgba(15,118,110,.28)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 46px rgba(15,118,110,.34)}.btn-ghost{background:white;border-color:var(--line);color:var(--green-800)}.hero{position:relative;overflow:hidden;padding:84px 0 70px}.hero:before{content:"";position:absolute;inset:-180px -160px auto auto;width:620px;height:620px;background:radial-gradient(circle,rgba(34,197,94,.28),transparent 62%);z-index:-1}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}.badge{display:inline-flex;gap:8px;align-items:center;background:white;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:13px;font-weight:700;color:var(--green-800);box-shadow:0 10px 30px rgba(5,46,36,.08)}h1{font-size:clamp(38px,5.6vw,72px);line-height:1.08;margin:20px 0 20px;letter-spacing:-.06em}.lead{font-size:clamp(17px,2vw,21px);color:var(--muted);margin:0 0 28px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.note{font-size:13px;color:var(--muted);margin-top:14px}.mock{background:rgba(255,255,255,.74);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);position:relative}.mock:before{content:"";position:absolute;inset:16px 16px auto auto;width:116px;height:116px;border-radius:32px;background:linear-gradient(135deg,rgba(34,197,94,.22),rgba(15,118,110,.04));transform:rotate(8deg)}.card{background:white;border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 12px 34px rgba(5,46,36,.08);position:relative}.checklist{display:grid;gap:12px;margin-top:18px}.check{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 14px;border-radius:16px;background:#f7fffb;border:1px solid #e4f5ec}.pill{font-size:12px;font-weight:800;color:var(--green-800);background:var(--green-100);padding:4px 9px;border-radius:999px;white-space:nowrap}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.stat{padding:16px;border-radius:18px;background:linear-gradient(180deg,#fff,#f5fff9);border:1px solid var(--line)}.stat b{font-size:22px;color:var(--green-800)}section{padding:72px 0}.section-title{font-size:clamp(30px,4vw,48px);line-height:1.18;letter-spacing:-.04em;margin:0 0 14px}.section-lead{color:var(--muted);font-size:18px;margin:0 0 30px}.problem-grid,.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.tile{background:white;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 12px 34px rgba(5,46,36,.06)}.tile .icon{font-size:30px}.tile h3{margin:12px 0 8px;font-size:20px}.tile p{margin:0;color:var(--muted)}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}.step{background:var(--green-950);color:white;border-radius:24px;padding:24px;position:relative;overflow:hidden}.step:before{counter-increment:step;content:"0" counter(step);display:inline-flex;margin-bottom:28px;color:#9ff0be;font-weight:900}.step p{color:#c8ded7;margin:8px 0 0}.pricing{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:stretch}.price-card{background:white;border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:var(--shadow)}.price{font-size:46px;font-weight:900;color:var(--green-800);letter-spacing:-.04em}.price small{font-size:16px;color:var(--muted)}.list{padding:0;margin:20px 0 0;list-style:none}.list li{padding:10px 0;border-bottom:1px solid var(--line)}.list li:before{content:"✓";color:var(--green-600);font-weight:900;margin-right:8px}.cta{background:linear-gradient(135deg,var(--green-950),var(--green-700));color:white;border-radius:34px;padding:46px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;box-shadow:var(--shadow)}.cta p{color:#cfe7df;margin:8px 0 0}.footer{padding:36px 0 48px;color:var(--muted);font-size:13px}.form{display:grid;gap:12px}.input{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:14px;font:inherit}.small{font-size:12px;color:var(--muted)}@media (max-width:860px){.nav-links{display:none}.hero-grid,.pricing,.cta{grid-template-columns:1fr}.problem-grid,.feature-grid,.flow,.stats{grid-template-columns:1fr}.hero{padding-top:52px}.cta{padding:30px}section{padding:52px 0}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>家庭防災設計 | あなたの家族専用の防災マニュアル、作ります。</title>
+<meta name="description" content="東大卒防災士監修で、首都圏直下型地震に備えた家庭防災設計を提供。備蓄、避難、家具固定、更新時期までPDFで納品します。">
+<style>
+:root{--ink:#14201f;--muted:#5f6b68;--line:#d9e2df;--paper:#f7f3ea;--white:#fff;--teal:#0f766e;--tealDark:#0b4f49;--orange:#e15b2d;--amber:#f5b84b;--sky:#d7edf0;--shadow:0 20px 60px rgba(20,32,31,.14)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Noto Sans JP",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.75;letter-spacing:0}a{color:inherit}.site-header{position:sticky;top:0;z-index:10;background:rgba(251,248,241,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(20,32,31,.08)}.nav{max-width:1160px;margin:0 auto;min-height:68px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;white-space:nowrap}.brand-mark{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--teal),var(--orange));font-size:18px}.nav-links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:14px}.nav-links a{text-decoration:none}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 18px;border-radius:8px;border:1px solid transparent;text-decoration:none;font-weight:800;line-height:1.2;transition:transform .18s ease,background .18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{color:#fff;background:var(--orange);box-shadow:0 12px 24px rgba(225,91,45,.25)}.btn-primary:hover{background:#c94d24}.btn-secondary{color:var(--tealDark);border-color:rgba(15,118,110,.34);background:rgba(255,255,255,.84)}.hero{position:relative;min-height:calc(100vh - 68px);display:grid;align-items:center;overflow:hidden;background:#1f6b63}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(12,45,42,.78) 0%,rgba(12,45,42,.48) 44%,rgba(12,45,42,.08) 78%),url("assets/hero-v2.png");background-size:cover;background-position:center}.hero-inner{position:relative;z-index:1;max-width:1160px;width:100%;margin:0 auto;padding:70px 24px 92px;color:#fff}.eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 0 18px;color:#dff4ef;font-weight:800;font-size:14px}.eyebrow:before{content:"";width:28px;height:2px;background:var(--amber)}h1{max-width:790px;margin:0;font-size:clamp(38px,7vw,78px);line-height:1.08;letter-spacing:0}.hero-copy{max-width:650px;margin:24px 0 0;color:rgba(255,255,255,.88);font-size:clamp(16px,2.1vw,20px)}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;width:min(780px,100%);margin-top:48px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.16)}.proof-item{padding:18px;background:rgba(7,24,22,.44)}.proof-item strong{display:block;font-size:24px;color:var(--amber);line-height:1.15}.proof-item span{display:block;margin-top:6px;color:rgba(255,255,255,.8);font-size:13px;line-height:1.5}.hero-proof .proof-item{display:flex;align-items:center}.hero-proof .proof-item strong{font-size:24px;color:var(--amber)}main section{padding:88px 24px}.container{max-width:1160px;margin:0 auto}.section-head{max-width:760px;margin-bottom:38px}.section-kicker{margin:0 0 8px;color:var(--orange);font-size:14px;font-weight:800}h2{margin:0;font-size:clamp(28px,4vw,46px);line-height:1.22;letter-spacing:0}.lead{margin:18px 0 0;color:var(--muted);font-size:18px}.problem,.sample,.faq,.testimonials{background:#fff}.split{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}.warning-panel{padding:30px;border-left:6px solid var(--orange);background:#fffaf3;box-shadow:0 16px 40px rgba(65,40,21,.08)}.plain-panel{padding:30px;border:1px solid var(--line);background:#fff}.plain-panel h3,.warning-panel h3{margin:0 0 14px;font-size:22px;line-height:1.35}.check-list{display:grid;gap:12px;margin:0;padding:0;list-style:none}.check-list li{position:relative;padding-left:30px;color:var(--muted)}.check-list li:before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:900}.value-band{background:linear-gradient(135deg,#16877d,#0f6f67);color:#fff}.value-band .lead,.value-band .section-kicker{color:rgba(255,255,255,.78)}.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}.step-card,.report-card,.price-card,.option-card,.faq-item{border-radius:8px;border:1px solid var(--line);background:#fff}.step-card{padding:28px;color:var(--ink)}.step-num{display:inline-grid;place-items:center;width:42px;height:42px;margin-bottom:18px;color:#fff;background:var(--teal);border-radius:8px;font-weight:900}.step-card h3,.report-card h3,.option-card h3,.price-card h3{margin:0 0 10px;font-size:22px;line-height:1.35}.step-card p,.report-card p,.option-card p,.price-card p{margin:0;color:var(--muted)}.diagnosis,.pricing{background:var(--paper)}.diagnosis-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:center}.risk-board{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.risk-chip{min-height:92px;padding:18px;display:flex;align-items:center;gap:12px;border:1px solid rgba(15,118,110,.2);background:#fff;border-radius:8px;box-shadow:0 10px 24px rgba(20,32,31,.07);font-weight:800}.risk-chip span{flex:0 0 auto;display:grid;place-items:center;width:38px;height:38px;border-radius:8px;background:var(--sky);color:var(--tealDark)}.report-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.report-card{padding:22px;min-height:180px}.report-icon{width:42px;height:42px;display:grid;place-items:center;margin-bottom:16px;border-radius:8px;color:#fff;background:var(--teal);font-weight:900}.sample-box{display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden;border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:var(--shadow)}.sample-panel{padding:30px}.sample-panel:nth-child(2){background:#eef8f7}.stock-list{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:10px}.stock-list li{display:flex;justify-content:space-between;gap:20px;padding-bottom:10px;border-bottom:1px solid rgba(20,32,31,.1)}.stock-list strong{white-space:nowrap}.options{background:#eef8f7}.option-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.option-card{padding:22px}.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.price-card{position:relative;padding:28px;display:flex;flex-direction:column;gap:18px}.price-card.featured{border:3px solid var(--orange);background:linear-gradient(180deg,#fff,#fff8f3);box-shadow:0 24px 70px rgba(223,106,59,.22);transform:translateY(-10px)}.tag{display:inline-flex;align-self:flex-start;padding:5px 10px;border-radius:999px;color:#fff;background:var(--orange);font-size:12px;font-weight:900}.price{margin:0;font-size:34px;font-weight:900;line-height:1}.price small{font-size:14px;color:var(--muted);font-weight:700}.price-card .btn{margin-top:auto}.price-card.compact{padding:22px;opacity:.9}.price-card.compact h3{font-size:19px}.price-card.compact .price{font-size:26px}.price-card.compact p{font-size:14px}.price-card .note{font-size:12px;color:var(--muted);margin-top:-4px}.voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.voice-card{padding:26px;border-radius:8px;border:1px solid var(--line);background:#fff;box-shadow:0 14px 36px rgba(20,32,31,.08)}.voice-meta{margin:0 0 12px;color:var(--tealDark);font-weight:900}.voice-card p:last-child{margin:0;color:var(--muted)}.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.faq-item{padding:24px}.faq-item h3{margin:0 0 8px;font-size:18px}.faq-item p{margin:0;color:var(--muted)}.cta{color:#fff;background:linear-gradient(120deg,rgba(11,79,73,.96),rgba(20,32,31,.92)),linear-gradient(45deg,var(--teal),var(--orange))}.cta-inner{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}.cta h2{max-width:760px}.cta p{max-width:720px;margin:16px 0 0;color:rgba(255,255,255,.82)}footer{padding:28px 24px;color:var(--muted);background:#f0eadf;font-size:13px}.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}@media(max-width:900px){.nav-links{display:none}.hero{min-height:auto}.hero:before{background-image:linear-gradient(180deg,rgba(12,27,26,.9) 0%,rgba(12,27,26,.74) 58%,rgba(12,27,26,.5) 100%),url("assets/hero-v2.png")}.hero-inner{padding:58px 20px 72px}.hero-proof,.split,.process-grid,.diagnosis-grid,.sample-box,.report-grid,.voice-grid,.option-grid,.price-grid,.faq-grid,.cta-inner{grid-template-columns:1fr}.risk-board{grid-template-columns:1fr}main section{padding:64px 20px}.price-card.featured{transform:none}}@media(max-width:520px){.nav{padding:0 16px}.brand span:last-child{font-size:14px}.hero-actions .btn,.cta .btn{width:100%}.warning-panel,.plain-panel,.sample-panel,.price-card{padding:22px}}
+
+/* Better Japanese line wrapping: keep phrases together when supported, avoid mid-word breaks. */
+body,h1,h2,h3,p,li,a,span,strong{line-break:strict;word-break:normal;overflow-wrap:break-word;}
+.brand,.btn,.eyebrow,.proof-item strong,.price,.tag,.voice-meta{word-break:keep-all;overflow-wrap:normal;}
+h1,h2,h3,.hero-copy,.lead,.plain-panel p,.warning-panel p,.step-card p,.report-card p,.sample-panel p,.option-card p,.price-card p,.faq-item p,.voice-card p{word-break:auto-phrase;line-break:strict;overflow-wrap:break-word;}
+@supports not (word-break:auto-phrase){h1,h2,h3,.hero-copy,.lead,.plain-panel p,.warning-panel p,.step-card p,.report-card p,.sample-panel p,.option-card p,.price-card p,.faq-item p,.voice-card p{word-break:normal;overflow-wrap:break-word;}}
+
+@media(max-width:640px){
+  .hero-proof{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;grid-template-columns:1fr;}
+  .proof-item{width:min(100%,360px);padding:16px 18px;}
+}
+@media(max-width:420px){
+  .hero-proof{width:100%;max-width:340px;}
+  .proof-item{width:100%;}
+}
+
+@media(max-width:640px){
+  .hero-proof{border:0;background:transparent;gap:8px;}
+}
+.hero-proof .proof-item strong{word-break:auto-phrase;overflow-wrap:break-word;}
+
+/* Rich concept variant */
+:root{--gold:#c99a3f;--goldSoft:#fff4d8;--forest:#0a4a43;--mist:#edf6f3;--cream:#fbf7ee;}
+body{background:linear-gradient(180deg,#fbf7ee 0%,#f4f7f2 42%,#fff 100%);}
+.site-header{background:rgba(255,252,246,.9);box-shadow:0 10px 30px rgba(20,32,31,.08)}
+.brand-mark{background:linear-gradient(135deg,#0f766e,#c99a3f)}
+.btn-primary{background:linear-gradient(135deg,#e15b2d,#c99a3f);box-shadow:0 16px 34px rgba(190,111,46,.28)}
+.btn-secondary{background:rgba(255,255,255,.92);box-shadow:0 12px 26px rgba(20,32,31,.1)}
+.hero{background:#0b3834}
+.hero:before{background-image:linear-gradient(90deg,rgba(6,30,28,.9) 0%,rgba(9,52,48,.68) 44%,rgba(9,52,48,.18) 78%),url("assets/hero-v2.png")}
+.hero-inner{padding-top:86px}
+.eyebrow{padding:8px 12px;border:1px solid rgba(245,184,75,.45);border-radius:999px;background:rgba(255,255,255,.08);backdrop-filter:blur(12px)}
+.eyebrow:before{display:none}
+h1{text-shadow:0 18px 45px rgba(0,0,0,.3)}
+.hero-copy{max-width:720px;color:rgba(255,255,255,.92)}
+.hero-proof{width:min(920px,100%);gap:12px;border:0;background:transparent}
+.proof-item{min-height:92px;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(7,24,22,.5));box-shadow:0 22px 50px rgba(0,0,0,.18);backdrop-filter:blur(14px)}
+.hero-proof .proof-item strong{color:#ffe0a0;font-size:20px}
+.rich-trust{padding:26px 24px;background:#102f2c;color:#fff}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:8px;background:rgba(255,255,255,.12)}
+.trust-item{padding:18px 20px;background:rgba(255,255,255,.06)}
+.trust-item strong{display:block;color:#ffe0a0;font-size:22px;line-height:1.2}
+.trust-item span{display:block;margin-top:6px;color:rgba(255,255,255,.76);font-size:13px}
+.problem{background:linear-gradient(180deg,#fff,#fbf7ee)}
+.warning-panel,.plain-panel,.voice-card,.report-card,.price-card,.option-card,.faq-item{box-shadow:0 18px 48px rgba(20,32,31,.1)}
+.warning-panel{border-left:0;border-top:5px solid var(--orange);background:#fffdf8}
+.plain-panel{background:linear-gradient(180deg,#fff,#f6fbf9)}
+.premium-reason{background:#0f3f3a;color:#fff}
+.premium-reason .section-kicker,.premium-reason .lead{color:rgba(255,255,255,.8)}
+.reason-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch}
+.reason-panel{padding:30px;border:1px solid rgba(255,255,255,.16);border-radius:8px;background:rgba(255,255,255,.08);box-shadow:0 24px 60px rgba(0,0,0,.18)}
+.reason-panel h3{margin:0 0 14px;font-size:24px;line-height:1.35}
+.reason-list{display:grid;gap:12px;margin:18px 0 0;padding:0;list-style:none}
+.reason-list li{padding:14px 16px;border-radius:8px;background:rgba(255,255,255,.09);color:rgba(255,255,255,.88)}
+.value-band{background:linear-gradient(135deg,#0f766e,#174f47 52%,#c99a3f)}
+.sample{background:linear-gradient(180deg,#fff,#f4faf7)}
+.pricing{background:linear-gradient(180deg,#fbf7ee,#fff)}
+.price-card.featured{border-color:var(--gold);background:linear-gradient(180deg,#fffdf8,#fff7e5);box-shadow:0 30px 90px rgba(157,102,35,.24)}
+.tag{background:linear-gradient(135deg,var(--orange),var(--gold))}
+.cta{background:linear-gradient(120deg,rgba(10,56,51,.96),rgba(20,32,31,.9)),url("assets/hero-v2.png");background-size:cover;background-position:center}
+@media(max-width:900px){.trust-grid,.reason-grid{grid-template-columns:1fr}.hero:before{background-image:linear-gradient(180deg,rgba(6,30,28,.94) 0%,rgba(9,52,48,.8) 58%,rgba(9,52,48,.6) 100%),url("assets/hero-v2.png")}}
+@media(max-width:640px){.rich-trust{padding:18px}.trust-item{padding:16px}.hero-proof{gap:10px}.proof-item{min-height:auto}}
+.profile{background:linear-gradient(180deg,#fff,#fbf7ee)}
+.profile-card{display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:center;padding:34px;border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:0 24px 70px rgba(20,32,31,.12)}
+.profile-media{position:relative;aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:linear-gradient(135deg,#0f766e,#c99a3f)}
+.profile-media img{width:100%;height:100%;object-fit:cover;display:block}
+.profile-media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,24,22,0),rgba(7,24,22,.28))}
+.profile-body h2{margin-bottom:8px}
+.profile-name{margin:0;color:var(--tealDark);font-size:22px;font-weight:900}
+.profile-role{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px;padding:0;list-style:none}
+.profile-role li{padding:7px 10px;border-radius:999px;background:#eef8f7;color:var(--tealDark);font-size:13px;font-weight:900}
+.profile-body p{color:var(--muted)}
+.profile-points{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+.profile-point{padding:16px;border:1px solid var(--line);border-radius:8px;background:#fffdf8}
+.profile-point strong{display:block;color:var(--ink);font-size:15px}
+.profile-point span{display:block;margin-top:4px;color:var(--muted);font-size:14px}
+@media(max-width:900px){.profile-card{grid-template-columns:1fr}.profile-media{min-height:auto;aspect-ratio:1/1;max-width:280px}.profile-points{grid-template-columns:1fr}}
+@page{size:A4;margin:10mm}
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  html,body{width:210mm;background:#fbf7ee!important}
+  body{font-size:11pt;line-height:1.55}
+  .site-header{position:static;box-shadow:none;background:#fffaf4!important}
+  .nav{min-height:auto;padding:8mm 8mm}
+  .nav-links{display:none}
+  main section{padding:14mm 10mm;break-inside:avoid;page-break-inside:avoid}
+  .container{max-width:none;width:100%}
+  .hero{min-height:auto;break-after:page;page-break-after:always;background:#0b3834!important}
+  .hero:before{background-image:linear-gradient(90deg,rgba(6,30,28,.9) 0%,rgba(9,52,48,.68) 44%,rgba(9,52,48,.18) 78%),url("assets/hero-v2.png")!important;background-size:cover!important;background-position:center!important}
+  .hero-inner{padding:24mm 10mm 24mm;color:#fff!important}
+  h1{font-size:34pt}
+  h2{font-size:22pt}
+  .hero-copy,.lead{font-size:12pt}
+  .hero-actions{display:none}
+  .hero-proof{width:100%;grid-template-columns:repeat(3,1fr)}
+  .rich-trust,.problem,.premium-reason,.value-band,.profile,.sample,.testimonials,.pricing,.options,.faq,.cta{break-inside:avoid;page-break-inside:avoid}
+  .trust-grid,.split,.reason-grid,.process-grid,.report-grid,.voice-grid,.price-grid,.option-grid,.faq-grid{break-inside:avoid;page-break-inside:avoid}
+  .warning-panel,.plain-panel,.reason-panel,.step-card,.report-card,.sample-box,.sample-panel,.voice-card,.price-card,.option-card,.faq-item,.profile-card,.trust-item{break-inside:avoid;page-break-inside:avoid}
+  .profile-card{grid-template-columns:40mm 1fr}
+  .profile-media{max-width:40mm}
+  .price-card.featured{transform:none}
+  .btn{display:none}
+  a{text-decoration:none}
+  footer{break-inside:avoid;page-break-inside:avoid;background:#f0eadf!important}
+}
+</style>
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top"><span class="logo">備</span><span>そなえコンシェルジュ</span></a>
-      <nav class="nav-links">
-        <a href="#problem">悩み</a><a href="#service">サービス</a><a href="#flow">流れ</a><a href="#price">料金</a><a class="btn btn-primary cta-track" href="#contact">無料相談</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header"><nav class="nav" aria-label="主要ナビゲーション"><div class="brand"><span class="brand-mark" aria-hidden="true">防</span><span>家庭防災設計</span></div><div class="nav-links"><a href="#service">サービス</a><a href="#profile">監修者</a><a href="#report">レポート</a><a href="#pricing">料金</a><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdN-GJSflzbG_x1TuT6UlR02CZDDmNqSC4FBP_ZSFNbk3B6Cw/viewform" target="_blank" rel="noopener">無料診断を予約する</a></div></nav></header>
+<main>
+<section class="hero"><div class="hero-inner"><p class="eyebrow">東大卒の防災士による家庭防災設計</p><h1>その防災バッグ、本当にあなたの家族に合っていますか？</h1><p class="hero-copy">備蓄すべきはあなたの家族専用の防災バッグ。家族構成や既往歴、ペット飼育状況、エリア・住宅環境などを踏まえた、あなたの家族専用の備蓄品を防災士がご提案します。</p><div class="hero-actions"><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdN-GJSflzbG_x1TuT6UlR02CZDDmNqSC4FBP_ZSFNbk3B6Cw/viewform" target="_blank" rel="noopener">無料診断を予約する</a><a class="btn btn-secondary" href="#pricing">料金プランを見る</a></div><div class="hero-proof" aria-label="サービス概要"><div class="proof-item"><strong>東大卒防災士監修</strong></div><div class="proof-item"><strong>30 - 60分のヒアリング</strong></div><div class="proof-item"><strong>あなたのご家庭専用の防災レポートを納品</strong></div></div></div></section><section class="rich-trust" aria-label="サービスの信頼要素"><div class="container trust-grid"><div class="trust-item"><strong>地震特化</strong><span>首都圏直下型地震を想定</span></div><div class="trust-item"><strong>家庭別</strong><span>家族構成・住環境まで反映</span></div><div class="trust-item"><strong>実行支援</strong><span>購入代行・家具固定にも対応</span></div><div class="trust-item"><strong>PDF納品</strong><span>備蓄・避難・連絡手段を整理</span></div></div></section>
+<section class="problem"><div class="container"><div class="section-head"><p class="section-kicker">PROBLEM</p><h2>あなたの家族は、こんな状態になっていませんか？</h2><p class="lead">首都圏直下型地震が怖い。備えなければと思っている。でも、忙しい毎日の中で、家族に合った対策まで考えきれない。そんなご家庭のためのサービスです。</p></div><div class="split"><div class="warning-panel"><h3>例えば…</h3><ul class="check-list"><li>とりあえず防災バッグを一つ買ってあるが、中身を見ていない</li><li>最近子どもが産まれたが、子ども用の備蓄品を買い増していない</li><li>実家の両親のことが心配だが、「気を付けてね」としか言えていない</li><li>家具を固定していないうえ、一番高いところにもモノを置いている</li><li>家族間で有事の際の連絡手段・集合場所について話していない</li></ul></div><div class="plain-panel"><h3>ご家庭によって、必要な備えは変わります</h3><p class="lead">同じ4人家族でも、乳幼児がいるご家庭、高齢者が近くに住むご家庭、ペットがいるご家庭、マンション高層階のご家庭では、備蓄品の中身も避難方法も変わります。必要なのは「平均的な防災バッグ」ではなく、あなたのご家庭に合わせた備えです。</p></div></div></div></section>
+<section class="premium-reason"><div class="container reason-grid"><div class="section-head"><p class="section-kicker">WHY PAID</p><h2>無料情報で足りないのは、情報量ではなく「あなたのご家庭なら何をすべきか」の判断です。</h2><p class="lead">水は何本必要か、トイレは何回分か、子ども用品は何を足すか、親世帯はどこまで見るか。家庭防災設計は、その判断と実行の面倒をまとめて軽くします。</p></div><div class="reason-panel"><h3>有料で相談する価値</h3><ul class="reason-list"><li>一般論ではなく、ご家庭の人数・年齢・住まいに合わせて必要量を整理</li><li>買うもの、後回しでよいもの、家族で決めることを優先順位化</li><li>備蓄品購入や家具固定まで、実行に移すところまで相談可能</li></ul></div></div></section><section id="service" class="value-band"><div class="container"><div class="section-head"><p class="section-kicker">SERVICE</p><h2>30-60分のヒアリングで、防災士監修のもと、あなたのご家庭専用の防災レポートを作成します。</h2><p class="lead">首都圏直下型地震を想定し、備蓄、避難方法、家具固定まで、面倒な地震対策を一括でご支援します。オプションとして、備蓄品購入や家具固定も代行可能です。</p></div><div class="process-grid"><article class="step-card"><span class="step-num">1</span><h3>ご家庭の防災診断</h3><p>家族構成、住まい、持病、ペット、備蓄、家具固定、避難所までの距離などをオンラインでヒアリングします。</p></article><article class="step-card"><span class="step-num">2</span><h3>防災状況の整理</h3><p>水、食料、トイレ、乳幼児用品、家具転倒、停電時の備えなどの不足と優先度をご家庭ごとに整理します。</p></article><article class="step-card"><span class="step-num">3</span><h3>レポート納品</h3><p>備蓄数量、避難計画、家族との連絡手段、家具安全診断、更新時期をPDFでわかりやすく納品します。</p></article></div></div></section><section id="profile" class="profile"><div class="container"><div class="profile-card"><div class="profile-media"><img src="assets/profile-shirahama.jpg" alt="白浜 | 首都圏防災サバイバルのプロフィール画像"></div><div class="profile-body"><p class="section-kicker">PROFILE</p><h2>一児の父として、防災準備の「調べる手間」を減らしたい。</h2><p class="profile-name">白浜 | 首都圏防災サバイバル</p><ul class="profile-role"><li>東京大学卒</li><li>防災士</li><li>IT企業勤務</li><li>1都3県対応</li></ul><p>一児の父になり、自宅の防災設備を一式用意する中で、行政資料や備蓄情報を読み解き、ご家庭に必要なものへ落とし込むことに大きな時間がかかると感じました。</p><p>IT企業で働きながら、防災士としての知見をもとに、乳幼児がいるご家庭、親世帯が心配なご家庭、マンション住まいのご家庭などに向けて、備蓄・避難方法・家具固定まで整理し、防災準備の手間とコストを減らす支援を行っています。</p><div class="profile-points"><div class="profile-point"><strong>対応エリア</strong><span>東京都・神奈川県・千葉県・埼玉県</span></div><div class="profile-point"><strong>得意な相談領域</strong><span>乳幼児家庭、親世帯、マンション、家具固定</span></div></div></div></div></div></section>
+<section id="report" class="sample"><div class="container"><div class="section-head"><p class="section-kicker">REPORT</p><h2>ご家庭のリスク状況、優先対応事項、備蓄推奨品リストなどをPDFレポートで作成。</h2><p class="lead">PDF 20〜30ページ程度。首都圏直下型地震を想定し、備蓄品の数量、避難計画、家族との連絡手段、家具安全診断までまとめます。</p></div><div class="report-grid"><article class="report-card"><div class="report-icon">災</div><h3>大地震リスク</h3><p>自宅所在地、建物、階数、ハザードマップを踏まえて確認。</p></article><article class="report-card"><div class="report-icon">順</div><h3>優先順位</h3><p>まず買うもの、次に買うもの、後回しでよいものを整理。</p></article><article class="report-card"><div class="report-icon">避</div><h3>避難計画</h3><p>集合場所、連絡方法、避難所、勤務先からの帰宅方法。</p></article><article class="report-card"><div class="report-icon">更</div><h3>更新時期</h3><p>食品、水、電池、薬の交換タイミングを見える化。</p></article></div><div class="sample-box" style="margin-top:28px"><div class="sample-panel"><h3>備蓄品一覧の例</h3><ul class="stock-list"><li><span>水</span><strong>42L</strong></li><li><span>アルファ米</span><strong>24食</strong></li><li><span>携帯トイレ</span><strong>180回</strong></li><li><span>モバイルバッテリー</span><strong>2個</strong></li></ul></div><div class="sample-panel"><h3>家具安全診断の例</h3><ul class="check-list"><li>転倒危険家具の洗い出し</li><li>固定推奨家具の優先順位</li><li>寝室の落下物、避難動線の改善提案</li><li>玄関、収納場所、非常持出袋の確認</li></ul></div></div></div></section>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="badge">都心・南海トラフ想定のファミリー防災</span>
-          <h1>家族に本当に必要な<br>防災備蓄だけを、<br>プロがリスト化。</h1>
-          <p class="lead">「何を・何日分・どこで買うべきか」が分からないご家庭へ。家族構成、住まい、通勤・在宅状況に合わせて、備蓄リスト作成から購入代行まで支援します。</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary cta-track" href="#contact">無料で相談する</a>
-            <a class="btn btn-ghost" href="#service">サービスを見る</a>
-          </div>
-          <p class="note">オンライン完結／小さなお子さま・高齢者・ペット同居にも対応</p>
-        </div>
-        <div class="mock" aria-label="防災備蓄リストのサンプル">
-          <div class="card">
-            <b>あなたの家庭専用 備蓄プラン</b>
-            <div class="checklist">
-              <div class="check"><span>飲料水・生活用水</span><span class="pill">7日分</span></div>
-              <div class="check"><span>乳幼児用品・常備薬</span><span class="pill">個別最適</span></div>
-              <div class="check"><span>停電・断水対策</span><span class="pill">優先度A</span></div>
-              <div class="check"><span>購入先・概算費用</span><span class="pill">一覧化</span></div>
-            </div>
-            <div class="stats">
-              <div class="stat"><b>30分</b><br><span>初回ヒアリング</span></div>
-              <div class="stat"><b>1枚</b><br><span>買い物リスト</span></div>
-              <div class="stat"><b>7日</b><br><span>目安備蓄</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="problem">
-      <div class="container">
-        <h2 class="section-title">防災セットを買うだけでは、足りない。</h2>
-        <p class="section-lead">家族ごとに必要な備えは違います。汎用品ではなく、生活実態に合わせて設計します。</p>
-        <div class="problem-grid">
-          <div class="tile"><div class="icon">🍼</div><h3>子ども・高齢者用品が漏れる</h3><p>ミルク、離乳食、薬、衛生用品など、家庭ごとの必需品を洗い出します。</p></div>
-          <div class="tile"><div class="icon">🏢</div><h3>在宅・出社で必要量が変わる</h3><p>平日日中に家にいる人数、帰宅困難リスクを前提に数量を調整します。</p></div>
-          <div class="tile"><div class="icon">🛒</div><h3>買う順番が分からない</h3><p>優先度、価格、保管場所を踏まえ、今日から買える順に整理します。</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="service">
-      <div class="container">
-        <h2 class="section-title">提供サービス</h2>
-        <p class="section-lead">備蓄の設計から購入まで、必要な部分だけ依頼できます。</p>
-        <div class="feature-grid">
-          <div class="tile"><div class="icon">📋</div><h3>家庭別ヒアリング</h3><p>家族構成、住居、勤務形態、既存備蓄、予算を確認します。</p></div>
-          <div class="tile"><div class="icon">🧭</div><h3>備蓄リスト作成</h3><p>品目、数量、優先度、代替品、購入先候補を一覧化します。</p></div>
-          <div class="tile"><div class="icon">📦</div><h3>購入代行・導入支援</h3><p>希望者には購入手配、保管場所の考え方、ローリングストック運用まで支援します。</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="flow">
-      <div class="container">
-        <h2 class="section-title">ご利用の流れ</h2>
-        <div class="flow">
-          <div class="step"><h3>無料相談</h3><p>不安や家族状況を簡単に確認します。</p></div>
-          <div class="step"><h3>ヒアリング</h3><p>住まい、人数、勤務形態、既存備蓄を整理。</p></div>
-          <div class="step"><h3>リスト納品</h3><p>必要品目・数量・購入先候補をお渡しします。</p></div>
-          <div class="step"><h3>購入支援</h3><p>希望者には購入代行と保管設計まで対応。</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="price">
-      <div class="container pricing">
-        <div>
-          <h2 class="section-title">まずは小さく、確実に備える。</h2>
-          <p class="section-lead">防災用品を闇雲に買う前に、必要なものを明確にします。</p>
-        </div>
-        <div class="price-card">
-          <h3>家庭別 備蓄リスト作成</h3>
-          <div class="price">¥19,800<small>〜 / 税込</small></div>
-          <ul class="list">
-            <li>30〜45分のオンラインヒアリング</li>
-            <li>家族構成別の備蓄リスト</li>
-            <li>購入優先度・概算予算の整理</li>
-            <li>購入代行は別途相談</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="cta">
-          <div>
-            <h2 class="section-title" style="margin:0;color:white">備蓄の不安を、今日リストに変えましょう。</h2>
-            <p>まずは無料相談で、家族に必要な備えの全体像を整理します。</p>
-          </div>
-          <a class="btn btn-primary cta-track" href="mailto:info@example.com?subject=防災備蓄リストの無料相談">メールで無料相談</a>
-        </div>
-        <p class="small">※ メールアドレスは仮置きです。公開前に実際の問い合わせ先またはフォームURLへ差し替えてください。</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">© 2026 そなえコンシェルジュ. Disaster preparedness planning for families.</div>
-  </footer>
-
-  <script>
-    document.querySelectorAll('.cta-track').forEach(function(el){
-      el.addEventListener('click', function(){
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({event:'cta_click', cta_text: el.textContent.trim(), cta_href: el.getAttribute('href')});
-        console.log('cta_click', el.textContent.trim());
-      });
-    });
-  </script>
+<section class="testimonials"><div class="container"><div class="section-head"><p class="section-kicker">VOICE</p><h2>利用者様の声</h2></div><div class="voice-grid"><article class="voice-card"><p class="voice-meta">60代・神奈川県在住・夫婦2名暮らし・戸建（築20年）</p><p>首都圏直下型地震を心配しているものの、だいぶ前に防災バッグを1つ買った程度しか対策をしていなかったので、ご相談させていただきました。特に助かったのは、私たちに合わせた備蓄品リストで、具体的にお水を何本用意すればいいか、ご飯は何をどのくらい用意すればいいか、そもそも家に置いておくべきものと普段から持ち歩くべきものはなにかなどが明確になり、大変ありがたかったです。</p></article><article class="voice-card"><p class="voice-meta">30代・東京都23区在住・夫婦と幼児3名暮らし・マンション（築40年）</p><p>とても助かりました。子供向けの対策グッズとして何を用意し、夫婦間でどのようなことを取り決めないといけないかが明確になりました。時間もコンパクトでまったく負担になりませんでした。</p></article></div></div></section>
+<section id="pricing" class="pricing"><div class="container"><div class="section-head"><p class="section-kicker">PRICE</p><h2>標準プランは4,800円。まずは30分の無料相談でご家庭の対策状況をたなおろしします。</h2></div><div class="price-grid three"><article class="price-card compact"><h3>無料診断</h3><p class="price">0円</p><p>30分の無料オンライン面談で、ご家庭の対策状況をたなおろし。</p></article><article class="price-card featured"><span class="tag">おすすめ</span><h3>家庭防災設計プラン</h3><p class="price">4,800円</p><p>60分のオンライン面談で、東大卒防災士監修のヒアリングシートをもとに、ご家庭の防災状況を棚卸し。中立的な立場から、大地震にそなえた必要な備蓄品リストと、避難方法・家族との連絡手段の確立などの対応策リストなどを含めた防災レポートを作成し納品。</p></article><article class="price-card"><h3>訪問診断プラン</h3><p class="price">29,800円</p><p>ご自宅の家具、寝室、玄関、非常持出袋、収納場所を確認し、実生活に合わせて改善案を提案します。</p><p class="note">都内23区の場合。場所により増減</p></article></div></div></section><section class="options"><div class="container"><div class="section-head"><p class="section-kicker">OPTIONS</p><h2>計画で終わらせず、実行まで支援できます。</h2></div><div class="option-grid"><article class="option-card"><h3>備蓄品購入代行</h3><p>備蓄品リストをワンクリックで買えるAmazonリンクの作成など、購入しやすいかたちで整理します。</p></article><article class="option-card"><h3>家具固定代行</h3><p>耐震グッズの選定、購入、設置まで代行。安全な住環境づくりを支援します。</p></article><article class="option-card"><h3>年1回見直し</h3><p>子どもの成長、親世帯の状況、引っ越し、新商品、賞味期限まで毎年見直します。</p></article></div></div></section>
+<section class="faq"><div class="container"><div class="section-head"><p class="section-kicker">FAQ</p><h2>よくある質問</h2></div><div class="faq-grid"><article class="faq-item"><h3>市販の防災バッグとの違いは？</h3><p>市販品は平均的なご家庭向けです。本サービスは家族構成、住まい、持病、通勤状況まで踏まえて、必要な数量と優先順位を設計します。</p></article><article class="faq-item"><h3>まだ備蓄がなくても利用できますか？</h3><p>はい。現状がゼロでも、まず何から揃えるべきかを順番に整理します。</p></article><article class="faq-item"><h3>実家の親の分も相談できますか？</h3><p>はい。近くに住むご両親の住まい、持病、備蓄状況も踏まえて、必要な備えを一緒に整理できます。</p></article><article class="faq-item"><h3>一度作れば終わりですか？</h3><p>家族や住まいは変化します。年1回更新プランで、子どもの成長、引っ越し、賞味期限などに合わせて見直せます。</p></article></div></div></section>
+<section id="contact" class="cta"><div class="container cta-inner"><div><p class="section-kicker">START</p><h2>あなたの家族専用の防災マニュアル、作ります。</h2><p>まずは無料の簡易診断から。ご家庭の状況を確認し、今いちばん不足している備えを見える化します。</p></div><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdN-GJSflzbG_x1TuT6UlR02CZDDmNqSC4FBP_ZSFNbk3B6Cw/viewform" target="_blank" rel="noopener">無料診断を予約する</a></div></section>
+</main>
+<footer><div class="footer-inner"><span>© 家庭防災設計</span><span>東大卒防災士監修で、ご家庭に合わせた防災インフラを設計します。</span></div></footer>
 </body>
 </html>
