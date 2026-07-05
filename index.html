@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>そなえコンシェルジュ｜家族に合わせた防災備蓄リスト作成・購入代行</title>
+  <meta name="description" content="家族構成・住まい・働き方に合わせて、本当に必要な防災備蓄品をリスト化。希望者には購入代行まで対応します。" />
+  <meta property="og:title" content="そなえコンシェルジュ｜家族に合わせた防災備蓄" />
+  <meta property="og:description" content="何をどれだけ備えればいいか分からないご家庭へ。防災備蓄リスト作成から購入代行まで。" />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --green-950:#052e24;--green-900:#064536;--green-800:#0b5b47;--green-700:#0f766e;--green-600:#159c77;--green-500:#22c55e;--green-100:#dcfce7;--mint:#ecfdf5;--cream:#fff9ed;--ink:#10231d;--muted:#5f716b;--line:#d7eadf;--white:#fff;--shadow:0 24px 70px rgba(5,46,36,.18);--radius:28px
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--mint),#fff 45%,var(--cream));line-height:1.75}a{text-decoration:none;color:inherit}.container{width:min(1120px,calc(100% - 32px));margin:auto}.nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(18px);background:rgba(236,253,245,.82);border-bottom:1px solid rgba(215,234,223,.8)}.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:800}.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--green-700),var(--green-500));display:grid;place-items:center;color:white;box-shadow:0 12px 28px rgba(15,118,110,.28)}.nav-links{display:flex;gap:22px;align-items:center;font-size:14px;color:var(--muted)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 22px;font-weight:800;border:1px solid transparent;transition:.2s;cursor:pointer}.btn-primary{background:linear-gradient(135deg,var(--green-800),var(--green-500));color:white;box-shadow:0 16px 36px rgba(15,118,110,.28)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 46px rgba(15,118,110,.34)}.btn-ghost{background:white;border-color:var(--line);color:var(--green-800)}.hero{position:relative;overflow:hidden;padding:84px 0 70px}.hero:before{content:"";position:absolute;inset:-180px -160px auto auto;width:620px;height:620px;background:radial-gradient(circle,rgba(34,197,94,.28),transparent 62%);z-index:-1}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}.badge{display:inline-flex;gap:8px;align-items:center;background:white;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:13px;font-weight:700;color:var(--green-800);box-shadow:0 10px 30px rgba(5,46,36,.08)}h1{font-size:clamp(38px,5.6vw,72px);line-height:1.08;margin:20px 0 20px;letter-spacing:-.06em}.lead{font-size:clamp(17px,2vw,21px);color:var(--muted);margin:0 0 28px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.note{font-size:13px;color:var(--muted);margin-top:14px}.mock{background:rgba(255,255,255,.74);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);position:relative}.mock:before{content:"";position:absolute;inset:16px 16px auto auto;width:116px;height:116px;border-radius:32px;background:linear-gradient(135deg,rgba(34,197,94,.22),rgba(15,118,110,.04));transform:rotate(8deg)}.card{background:white;border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 12px 34px rgba(5,46,36,.08);position:relative}.checklist{display:grid;gap:12px;margin-top:18px}.check{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 14px;border-radius:16px;background:#f7fffb;border:1px solid #e4f5ec}.pill{font-size:12px;font-weight:800;color:var(--green-800);background:var(--green-100);padding:4px 9px;border-radius:999px;white-space:nowrap}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.stat{padding:16px;border-radius:18px;background:linear-gradient(180deg,#fff,#f5fff9);border:1px solid var(--line)}.stat b{font-size:22px;color:var(--green-800)}section{padding:72px 0}.section-title{font-size:clamp(30px,4vw,48px);line-height:1.18;letter-spacing:-.04em;margin:0 0 14px}.section-lead{color:var(--muted);font-size:18px;margin:0 0 30px}.problem-grid,.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.tile{background:white;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 12px 34px rgba(5,46,36,.06)}.tile .icon{font-size:30px}.tile h3{margin:12px 0 8px;font-size:20px}.tile p{margin:0;color:var(--muted)}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}.step{background:var(--green-950);color:white;border-radius:24px;padding:24px;position:relative;overflow:hidden}.step:before{counter-increment:step;content:"0" counter(step);display:inline-flex;margin-bottom:28px;color:#9ff0be;font-weight:900}.step p{color:#c8ded7;margin:8px 0 0}.pricing{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:stretch}.price-card{background:white;border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:var(--shadow)}.price{font-size:46px;font-weight:900;color:var(--green-800);letter-spacing:-.04em}.price small{font-size:16px;color:var(--muted)}.list{padding:0;margin:20px 0 0;list-style:none}.list li{padding:10px 0;border-bottom:1px solid var(--line)}.list li:before{content:"✓";color:var(--green-600);font-weight:900;margin-right:8px}.cta{background:linear-gradient(135deg,var(--green-950),var(--green-700));color:white;border-radius:34px;padding:46px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;box-shadow:var(--shadow)}.cta p{color:#cfe7df;margin:8px 0 0}.footer{padding:36px 0 48px;color:var(--muted);font-size:13px}.form{display:grid;gap:12px}.input{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:14px;font:inherit}.small{font-size:12px;color:var(--muted)}@media (max-width:860px){.nav-links{display:none}.hero-grid,.pricing,.cta{grid-template-columns:1fr}.problem-grid,.feature-grid,.flow,.stats{grid-template-columns:1fr}.hero{padding-top:52px}.cta{padding:30px}section{padding:52px 0}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top"><span class="logo">備</span><span>そなえコンシェルジュ</span></a>
+      <nav class="nav-links">
+        <a href="#problem">悩み</a><a href="#service">サービス</a><a href="#flow">流れ</a><a href="#price">料金</a><a class="btn btn-primary cta-track" href="#contact">無料相談</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">都心・南海トラフ想定のファミリー防災</span>
+          <h1>家族に本当に必要な<br>防災備蓄だけを、<br>プロがリスト化。</h1>
+          <p class="lead">「何を・何日分・どこで買うべきか」が分からないご家庭へ。家族構成、住まい、通勤・在宅状況に合わせて、備蓄リスト作成から購入代行まで支援します。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary cta-track" href="#contact">無料で相談する</a>
+            <a class="btn btn-ghost" href="#service">サービスを見る</a>
+          </div>
+          <p class="note">オンライン完結／小さなお子さま・高齢者・ペット同居にも対応</p>
+        </div>
+        <div class="mock" aria-label="防災備蓄リストのサンプル">
+          <div class="card">
+            <b>あなたの家庭専用 備蓄プラン</b>
+            <div class="checklist">
+              <div class="check"><span>飲料水・生活用水</span><span class="pill">7日分</span></div>
+              <div class="check"><span>乳幼児用品・常備薬</span><span class="pill">個別最適</span></div>
+              <div class="check"><span>停電・断水対策</span><span class="pill">優先度A</span></div>
+              <div class="check"><span>購入先・概算費用</span><span class="pill">一覧化</span></div>
+            </div>
+            <div class="stats">
+              <div class="stat"><b>30分</b><br><span>初回ヒアリング</span></div>
+              <div class="stat"><b>1枚</b><br><span>買い物リスト</span></div>
+              <div class="stat"><b>7日</b><br><span>目安備蓄</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem">
+      <div class="container">
+        <h2 class="section-title">防災セットを買うだけでは、足りない。</h2>
+        <p class="section-lead">家族ごとに必要な備えは違います。汎用品ではなく、生活実態に合わせて設計します。</p>
+        <div class="problem-grid">
+          <div class="tile"><div class="icon">🍼</div><h3>子ども・高齢者用品が漏れる</h3><p>ミルク、離乳食、薬、衛生用品など、家庭ごとの必需品を洗い出します。</p></div>
+          <div class="tile"><div class="icon">🏢</div><h3>在宅・出社で必要量が変わる</h3><p>平日日中に家にいる人数、帰宅困難リスクを前提に数量を調整します。</p></div>
+          <div class="tile"><div class="icon">🛒</div><h3>買う順番が分からない</h3><p>優先度、価格、保管場所を踏まえ、今日から買える順に整理します。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service">
+      <div class="container">
+        <h2 class="section-title">提供サービス</h2>
+        <p class="section-lead">備蓄の設計から購入まで、必要な部分だけ依頼できます。</p>
+        <div class="feature-grid">
+          <div class="tile"><div class="icon">📋</div><h3>家庭別ヒアリング</h3><p>家族構成、住居、勤務形態、既存備蓄、予算を確認します。</p></div>
+          <div class="tile"><div class="icon">🧭</div><h3>備蓄リスト作成</h3><p>品目、数量、優先度、代替品、購入先候補を一覧化します。</p></div>
+          <div class="tile"><div class="icon">📦</div><h3>購入代行・導入支援</h3><p>希望者には購入手配、保管場所の考え方、ローリングストック運用まで支援します。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="container">
+        <h2 class="section-title">ご利用の流れ</h2>
+        <div class="flow">
+          <div class="step"><h3>無料相談</h3><p>不安や家族状況を簡単に確認します。</p></div>
+          <div class="step"><h3>ヒアリング</h3><p>住まい、人数、勤務形態、既存備蓄を整理。</p></div>
+          <div class="step"><h3>リスト納品</h3><p>必要品目・数量・購入先候補をお渡しします。</p></div>
+          <div class="step"><h3>購入支援</h3><p>希望者には購入代行と保管設計まで対応。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="price">
+      <div class="container pricing">
+        <div>
+          <h2 class="section-title">まずは小さく、確実に備える。</h2>
+          <p class="section-lead">防災用品を闇雲に買う前に、必要なものを明確にします。</p>
+        </div>
+        <div class="price-card">
+          <h3>家庭別 備蓄リスト作成</h3>
+          <div class="price">¥19,800<small>〜 / 税込</small></div>
+          <ul class="list">
+            <li>30〜45分のオンラインヒアリング</li>
+            <li>家族構成別の備蓄リスト</li>
+            <li>購入優先度・概算予算の整理</li>
+            <li>購入代行は別途相談</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 class="section-title" style="margin:0;color:white">備蓄の不安を、今日リストに変えましょう。</h2>
+            <p>まずは無料相談で、家族に必要な備えの全体像を整理します。</p>
+          </div>
+          <a class="btn btn-primary cta-track" href="mailto:info@example.com?subject=防災備蓄リストの無料相談">メールで無料相談</a>
+        </div>
+        <p class="small">※ メールアドレスは仮置きです。公開前に実際の問い合わせ先またはフォームURLへ差し替えてください。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2026 そなえコンシェルジュ. Disaster preparedness planning for families.</div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.cta-track').forEach(function(el){
+      el.addEventListener('click', function(){
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({event:'cta_click', cta_text: el.textContent.trim(), cta_href: el.getAttribute('href')});
+        console.log('cta_click', el.textContent.trim());
+      });
+    });
+  </script>
+</body>
+</html>
