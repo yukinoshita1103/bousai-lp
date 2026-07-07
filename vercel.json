@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/form",
+      "destination": "/form.html"
+    },
+    {
+      "source": "/thanks",
+      "destination": "/thanks.html"
+    }
+  ]
+}
