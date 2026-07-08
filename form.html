@@ -253,6 +253,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       redirected = true;
       window.location.href = '/thanks';
     }
+    if (typeof gtag === 'function') {
+      gtag('event', 'form_submit', {
+        event_category: 'lead',
+        event_label: 'diagnosis_form'
+      });
+    }
     if (window.dataLayer && Array.isArray(window.dataLayer)) {
       window.dataLayer.push({
         event: 'form_submit',
