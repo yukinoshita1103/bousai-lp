@@ -50,13 +50,10 @@ function buildMessage(data, req) {
   const rows = [
     ['メールアドレス', data.email],
     ['お名前', data.name],
-    ['電話番号', data.phone || '未入力'],
-    ['家族構成', data.family],
-    ['お住まいのエリア', data.area || '未入力'],
-    ['該当するもの', formatList(data.applies)],
-    ['特に相談したいこと', formatList(data.consultation)],
-    ['無料診断の希望日時', data.preferredDate],
-    ['希望する連絡方法', data.contactMethod],
+    ['家族構成', data.familyType],
+    ['一番困っていること', formatList(data.concerns)],
+    ['お困りごとの概要', data.concernSummary || '未入力'],
+    ['ご相談可能な日時', data.preferredDate || '未入力'],
     ['送信日時', new Date().toLocaleString('ja-JP', {timeZone: 'Asia/Tokyo'})],
     ['送信元', req.headers.origin || '不明']
   ];
@@ -101,17 +98,14 @@ module.exports = async function handler(req, res) {
   const data = {
     email: normalizeText(body.email),
     name: normalizeText(body.name),
-    phone: normalizeText(body.phone),
-    family: normalizeText(body.family),
-    area: normalizeText(body.area),
-    applies: normalizeArray(body.applies),
-    consultation: normalizeArray(body.consultation),
-    preferredDate: normalizeText(body.preferredDate),
-    contactMethod: normalizeText(body.contactMethod)
+    familyType: normalizeText(body.familyType || body.family),
+    concerns: normalizeArray(body.concerns && body.concerns.length ? body.concerns : body.consultation),
+    concernSummary: normalizeText(body.concernSummary),
+    preferredDate: normalizeText(body.preferredDate)
   };
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(data.email) || !data.name || !data.family || data.consultation.length === 0 || !data.preferredDate || !data.contactMethod) {
+  if (!emailPattern.test(data.email) || !data.name || !data.familyType || data.concerns.length === 0) {
     return sendJson(res, 400, {ok: false, error: 'Required fields are missing'});
   }
 
