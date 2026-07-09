@@ -247,28 +247,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   function redirectAfterTracking() {
-    var redirected = false;
-    function go() {
-      if (redirected) return;
-      redirected = true;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'form_submit'
+    });
+    window.setTimeout(function(){
       window.location.href = '/thanks';
-    }
-    if (typeof gtag === 'function') {
-      gtag('event', 'form_submit', {
-        event_category: 'lead',
-        event_label: 'diagnosis_form'
-      });
-    }
-    if (window.dataLayer && Array.isArray(window.dataLayer)) {
-      window.dataLayer.push({
-        event: 'form_submit',
-        eventCallback: go,
-        eventTimeout: 1000
-      });
-      window.setTimeout(go, 1200);
-    } else {
-      go();
-    }
+    }, 800);
   }
 
   form.addEventListener('submit', function(event){
