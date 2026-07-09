@@ -46,8 +46,6 @@ form{min-width:0;padding:28px;border:1px solid var(--line);border-radius:10px;ba
 .side-list{display:grid;gap:12px;margin:18px 0 0;padding:0;list-style:none}
 .side-list li{position:relative;padding-left:28px;color:var(--muted)}
 .side-list li:before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:900}
-.trust-badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
-.trust-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;background:#eef8f7;color:var(--tealDark);font-size:13px;font-weight:900}
 .flow-box{margin:0 0 24px;padding:20px;border:1px solid rgba(15,118,110,.18);border-radius:10px;background:linear-gradient(180deg,#fffdf8,#f4fbf8)}
 .flow-title{margin:0 0 14px;color:var(--tealDark);font-size:20px;line-height:1.35}
 .flow-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}
@@ -56,6 +54,7 @@ form{min-width:0;padding:28px;border:1px solid var(--line);border-radius:10px;ba
 .flow-step:last-child:after{display:none}
 .flow-icon{display:grid;place-items:center;width:30px;height:30px;margin-bottom:9px;border-radius:999px;color:#fff;background:linear-gradient(135deg,var(--teal),var(--gold));font-weight:900;font-size:13px}
 .flow-step strong{display:block;font-size:14px;line-height:1.45}
+.flow-step .phrase{display:inline-block;white-space:nowrap}
 .section{padding:22px 0;border-top:1px solid var(--line)}
 .section:first-child{padding-top:0;border-top:0}
 .section-title{margin:0 0 18px;color:var(--tealDark);font-size:22px;line-height:1.35}
@@ -73,7 +72,7 @@ fieldset{min-width:0;margin:18px 0 0;padding:0;border:0}
 .choice{display:flex;align-items:flex-start;gap:10px;min-width:0;padding:12px 13px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .choice input{flex:0 0 auto;margin-top:6px;accent-color:var(--teal)}
 .choice span{min-width:0;color:var(--ink);font-weight:700;line-height:1.55}
-.brand,.nav-link,.trust-badge,.flow-step strong,.section-title,.legend,label,.choice span,.submit-btn,.back-link{word-break:keep-all;overflow-wrap:normal}
+.brand,.nav-link,.section-title,.legend,label,.choice span,.submit-btn,.back-link{word-break:keep-all;overflow-wrap:normal}
 .radio-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 .radio-row .choice{min-width:150px}
 .honeypot{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
@@ -135,17 +134,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="form-wrap">
     <div class="form-card">
       <form id="diagnosis-form" novalidate>
-        <div class="trust-badges" aria-label="フォームの安心情報">
-          <span class="trust-badge">こちらからの営業連絡なし</span>
-        </div>
-
         <div class="flow-box" aria-label="お申し込み後の流れ">
           <h2 class="flow-title">お申し込み後の流れ</h2>
           <ol class="flow-steps">
-            <li class="flow-step"><span class="flow-icon">1</span><strong>フォーム送信</strong></li>
-            <li class="flow-step"><span class="flow-icon">2</span><strong>担当よりメールでご連絡</strong></li>
-            <li class="flow-step"><span class="flow-icon">3</span><strong>30分オンライン相談</strong></li>
-            <li class="flow-step"><span class="flow-icon">4</span><strong>ご家庭専用の改善ポイントをご提案</strong></li>
+            <li class="flow-step"><span class="flow-icon">1</span><strong><span class="phrase">フォーム送信</span><span class="phrase">約30秒</span></strong></li>
+            <li class="flow-step"><span class="flow-icon">2</span><strong><span class="phrase">担当より</span><span class="phrase">24時間以内に</span><span class="phrase">メール</span></strong></li>
+            <li class="flow-step"><span class="flow-icon">3</span><strong><span class="phrase">30分</span><span class="phrase">オンライン相談</span></strong></li>
+            <li class="flow-step"><span class="flow-icon">4</span><strong><span class="phrase">ご家庭専用の</span><span class="phrase">改善ポイントを</span><span class="phrase">ご提案</span></strong></li>
           </ol>
         </div>
 
