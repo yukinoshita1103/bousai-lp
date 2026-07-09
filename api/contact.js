@@ -1,5 +1,6 @@
-const DEFAULT_TO_EMAIL = 'kota.nagahama1103@gmail.com';
-const DEFAULT_FROM_EMAIL = '家庭防災設計 <onboarding@resend.dev>';
+const DEFAULT_TO_EMAIL = 'info@katei-bousai.jp';
+const DEFAULT_FROM_EMAIL = '家庭防災設計 <no-reply@katei-bousai.jp>';
+const LEGACY_TO_EMAIL = 'kota.nagahama1103@gmail.com';
 
 const ALLOWED_ORIGINS = new Set([
   'https://katei-bousai.jp',
@@ -44,6 +45,12 @@ function escapeHtml(value) {
 
 function formatList(items) {
   return items.length > 0 ? items.join('、') : '未選択';
+}
+
+function resolveToEmail(value) {
+  const email = normalizeText(value);
+  if (!email || email === LEGACY_TO_EMAIL) return DEFAULT_TO_EMAIL;
+  return email;
 }
 
 function buildMessage(data, req) {
@@ -116,7 +123,7 @@ module.exports = async function handler(req, res) {
   }
 
   const {text, html} = buildMessage(data, req);
-  const to = process.env.RESEND_TO_EMAIL || DEFAULT_TO_EMAIL;
+  const to = resolveToEmail(process.env.RESEND_TO_EMAIL);
   const from = process.env.RESEND_FROM_EMAIL || DEFAULT_FROM_EMAIL;
   const subject = `【家庭防災設計】30分無料診断の申し込み: ${data.name}`;
 
