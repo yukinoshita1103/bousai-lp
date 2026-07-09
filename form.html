@@ -73,6 +73,7 @@ fieldset{min-width:0;margin:18px 0 0;padding:0;border:0}
 .choice{display:flex;align-items:flex-start;gap:10px;min-width:0;padding:12px 13px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .choice input{flex:0 0 auto;margin-top:6px;accent-color:var(--teal)}
 .choice span{min-width:0;color:var(--ink);font-weight:700;line-height:1.55}
+.brand,.nav-link,.trust-badge,.flow-step strong,.section-title,.legend,label,.choice span,.submit-btn,.back-link{word-break:keep-all;overflow-wrap:normal}
 .radio-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 .radio-row .choice{min-width:150px}
 .honeypot{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
@@ -135,16 +136,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="form-card">
       <form id="diagnosis-form" novalidate>
         <div class="trust-badges" aria-label="フォームの安心情報">
-          <span class="trust-badge">約30秒で完了</span>
           <span class="trust-badge">こちらからの営業連絡なし</span>
-          <span class="trust-badge">24時間以内にメール</span>
         </div>
 
         <div class="flow-box" aria-label="お申し込み後の流れ">
           <h2 class="flow-title">お申し込み後の流れ</h2>
           <ol class="flow-steps">
-            <li class="flow-step"><span class="flow-icon">1</span><strong>フォーム送信<br>約30秒</strong></li>
-            <li class="flow-step"><span class="flow-icon">2</span><strong>担当より24時間以内にメール</strong></li>
+            <li class="flow-step"><span class="flow-icon">1</span><strong>フォーム送信</strong></li>
+            <li class="flow-step"><span class="flow-icon">2</span><strong>担当よりメールでご連絡</strong></li>
             <li class="flow-step"><span class="flow-icon">3</span><strong>30分オンライン相談</strong></li>
             <li class="flow-step"><span class="flow-icon">4</span><strong>ご家庭専用の改善ポイントをご提案</strong></li>
           </ol>
