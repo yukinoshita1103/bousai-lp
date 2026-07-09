@@ -52,6 +52,7 @@ function buildMessage(data, req) {
     ['お名前', data.name],
     ['家族構成', data.familyType],
     ['一番困っていること', formatList(data.concerns)],
+    ['お困りごとの概要', data.concernSummary || '未入力'],
     ['ご相談可能な日時', data.preferredDate || '未入力'],
     ['送信日時', new Date().toLocaleString('ja-JP', {timeZone: 'Asia/Tokyo'})],
     ['送信元', req.headers.origin || '不明']
@@ -99,6 +100,7 @@ module.exports = async function handler(req, res) {
     name: normalizeText(body.name),
     familyType: normalizeText(body.familyType || body.family),
     concerns: normalizeArray(body.concerns && body.concerns.length ? body.concerns : body.consultation),
+    concernSummary: normalizeText(body.concernSummary),
     preferredDate: normalizeText(body.preferredDate)
   };
 
