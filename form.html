@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>家庭防災設計 30分無料診断 | 家庭防災設計</title>
+<title>30分無料相談 予約フォーム | 家庭防災設計</title>
 <meta name="description" content="首都圏直下型地震に備えた家庭防災計画の無料診断予約フォームです。">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -32,13 +32,13 @@ h1,h2{text-wrap:balance}
 .nav-link{font-weight:800;color:var(--tealDark);text-decoration:none}
 .hero{position:relative;overflow:hidden;background:#0b3834;color:#fff}
 .hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(6,30,28,.92),rgba(9,52,48,.74) 58%,rgba(9,52,48,.38)),url("assets/hero-v2.png");background-size:cover;background-position:center;opacity:.96}
-.hero-inner{position:relative;width:min(1040px,100%);margin:0 auto;padding:70px 20px 74px}
+.hero-inner{position:relative;width:min(1040px,100%);margin:0 auto;padding:56px 20px 64px}
 .eyebrow{display:inline-flex;margin:0 0 16px;padding:8px 12px;border:1px solid rgba(245,184,75,.42);border-radius:999px;background:rgba(255,255,255,.08);color:#ffe0a0;font-size:14px;font-weight:900}
 h1{max-width:780px;margin:0;font-size:clamp(34px,6.2vw,62px);line-height:1.12;letter-spacing:0}
 .subline{margin:12px 0 0;color:#ffe0a0;font-size:20px;font-weight:900}
 .hero-copy{max-width:760px;margin:22px 0 0;color:rgba(255,255,255,.9);font-size:18px}
 .form-wrap{width:min(1040px,100%);margin:-34px auto 0;padding:0 20px 80px;position:relative;z-index:2}
-.form-card{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:26px;align-items:start}
+.form-card{width:min(760px,100%);margin:0 auto}
 form{min-width:0;padding:28px;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:var(--shadow)}
 .side-card{position:sticky;top:92px;min-width:0;padding:24px;border:1px solid rgba(15,118,110,.18);border-radius:10px;background:linear-gradient(180deg,#fff,#f2fbf8);box-shadow:0 18px 42px rgba(20,32,31,.1)}
 .side-card h2{margin:0 0 12px;font-size:22px;line-height:1.35}
@@ -89,11 +89,9 @@ footer{padding:28px 20px;color:var(--muted);background:#f0eadf;font-size:13px}
 .footer-inner{width:min(1040px,100%);margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .footer-inner a{color:var(--tealDark);font-weight:800}
 @media(max-width:900px){
-  .form-card{grid-template-columns:minmax(0,1fr)}
-  .side-card{position:static;order:-1}
   .flow-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
   .flow-step:nth-child(2):after{display:none}
-  .hero-inner{padding:52px 18px 62px}
+  .hero-inner{padding:48px 18px 58px}
   .form-wrap{padding:0 18px 64px}
   form{padding:24px 18px}
 }
@@ -129,10 +127,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main>
   <section class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">首都圏直下型地震への備えを、ご家庭ごとに整理</p>
-      <h1>家庭防災設計 30分無料診断</h1>
-      <p class="subline">※1営業日以内にご返信</p>
-      <p class="hero-copy">首都圏直下型地震に備えた家庭防災計画の無料診断予約フォームです。ご家庭の状況を簡単にお知らせください。内容を確認のうえ、担当者よりご連絡します。</p>
+      <h1>30分無料相談 予約フォーム</h1>
     </div>
   </section>
 
@@ -141,7 +136,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <form id="diagnosis-form" novalidate>
         <div class="trust-badges" aria-label="フォームの安心情報">
           <span class="trust-badge">約30秒で完了</span>
-          <span class="trust-badge">営業電話なし</span>
+          <span class="trust-badge">こちらからの営業連絡なし</span>
           <span class="trust-badge">24時間以内にメール</span>
         </div>
 
@@ -195,6 +190,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
           </fieldset>
           <div class="field">
+            <label for="concernSummary">お困りごとの概要<span class="optional">任意</span></label>
+            <textarea id="concernSummary" name="concernSummary"></textarea>
+          </div>
+          <div class="field">
             <label for="preferredDate">ご相談可能な日時<span class="optional">任意</span></label>
             <p class="help">平日夜・土日も対応しています。候補を2〜3つご記入ください。</p>
             <textarea id="preferredDate" name="preferredDate"></textarea>
@@ -206,7 +205,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
         </div>
 
-        <p class="safe-note">営業電話はいたしません。ご入力いただいた内容は無料診断以外には利用いたしません。</p>
+        <p class="safe-note">ご入力いただいた内容は無料診断以外には利用いたしません。</p>
 
         <div class="form-actions">
           <button class="submit-btn" type="submit">30分無料相談を予約する</button>
@@ -215,15 +214,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div id="form-notice" class="notice" role="status" aria-live="polite"></div>
       </form>
 
-      <aside class="side-card" aria-label="無料診断の流れ">
-        <h2>入力は30秒ほどです。</h2>
-        <p>いま困っていることだけ教えてください。詳しい内容は無料相談で伺います。</p>
-        <ul class="side-list">
-          <li>内容確認後、24時間以内にメールします。</li>
-          <li>無料診断は30分のオンライン面談です。</li>
-          <li>備蓄・家具固定・子どもやペットの備えを整理できます。</li>
-        </ul>
-      </aside>
     </div>
   </div>
 </main>
@@ -283,6 +273,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       name: form.name.value.trim(),
       familyType: form.familyType.value,
       concerns: concerns,
+      concernSummary: form.concernSummary.value.trim(),
       preferredDate: form.preferredDate.value.trim(),
       website: form.website.value
     };
