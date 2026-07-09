@@ -38,15 +38,25 @@ h1{max-width:780px;margin:0;font-size:clamp(34px,6.2vw,62px);line-height:1.12;le
 .subline{margin:12px 0 0;color:#ffe0a0;font-size:20px;font-weight:900}
 .hero-copy{max-width:760px;margin:22px 0 0;color:rgba(255,255,255,.9);font-size:18px}
 .form-wrap{width:min(1040px,100%);margin:-34px auto 0;padding:0 20px 80px;position:relative;z-index:2}
-.form-card{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:28px;align-items:start}
-form{min-width:0;padding:30px;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:var(--shadow)}
+.form-card{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:26px;align-items:start}
+form{min-width:0;padding:28px;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:var(--shadow)}
 .side-card{position:sticky;top:92px;min-width:0;padding:24px;border:1px solid rgba(15,118,110,.18);border-radius:10px;background:linear-gradient(180deg,#fff,#f2fbf8);box-shadow:0 18px 42px rgba(20,32,31,.1)}
 .side-card h2{margin:0 0 12px;font-size:22px;line-height:1.35}
 .side-card p{margin:0;color:var(--muted)}
 .side-list{display:grid;gap:12px;margin:18px 0 0;padding:0;list-style:none}
 .side-list li{position:relative;padding-left:28px;color:var(--muted)}
 .side-list li:before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:900}
-.section{padding:24px 0;border-top:1px solid var(--line)}
+.trust-badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.trust-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border-radius:999px;background:#eef8f7;color:var(--tealDark);font-size:13px;font-weight:900}
+.flow-box{margin:0 0 24px;padding:20px;border:1px solid rgba(15,118,110,.18);border-radius:10px;background:linear-gradient(180deg,#fffdf8,#f4fbf8)}
+.flow-title{margin:0 0 14px;color:var(--tealDark);font-size:20px;line-height:1.35}
+.flow-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}
+.flow-step{position:relative;min-width:0;padding:14px 12px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.flow-step:after{content:"";position:absolute;top:50%;right:-9px;width:8px;height:1px;background:var(--gold)}
+.flow-step:last-child:after{display:none}
+.flow-icon{display:grid;place-items:center;width:30px;height:30px;margin-bottom:9px;border-radius:999px;color:#fff;background:linear-gradient(135deg,var(--teal),var(--gold));font-weight:900;font-size:13px}
+.flow-step strong{display:block;font-size:14px;line-height:1.45}
+.section{padding:22px 0;border-top:1px solid var(--line)}
 .section:first-child{padding-top:0;border-top:0}
 .section-title{margin:0 0 18px;color:var(--tealDark);font-size:22px;line-height:1.35}
 .field{display:grid;gap:8px;margin-top:18px}
@@ -69,6 +79,8 @@ fieldset{min-width:0;margin:18px 0 0;padding:0;border:0}
 .form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:26px}
 .submit-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 24px;border:0;border-radius:8px;color:#fff;background:linear-gradient(135deg,var(--orange),var(--gold));font:inherit;font-weight:900;line-height:1.2;cursor:pointer;box-shadow:0 16px 34px rgba(190,111,46,.26)}
 .submit-btn:disabled{cursor:not-allowed;opacity:.68}
+.safe-note{display:flex;gap:10px;align-items:flex-start;margin:22px 0 0;padding:13px 14px;border-radius:8px;background:#f6fbf9;color:var(--muted);font-size:13px;line-height:1.65}
+.safe-note:before{content:"✓";flex:0 0 auto;display:grid;place-items:center;width:22px;height:22px;border-radius:999px;color:#fff;background:var(--teal);font-weight:900}
 .back-link{color:var(--tealDark);font-weight:900;text-decoration:underline;text-underline-offset:4px}
 .notice{display:none;margin-top:18px;padding:14px 16px;border-radius:8px;font-weight:800}
 .notice.is-error{display:block;border:1px solid #f4b4aa;background:#fff3f1;color:var(--danger)}
@@ -79,6 +91,8 @@ footer{padding:28px 20px;color:var(--muted);background:#f0eadf;font-size:13px}
 @media(max-width:900px){
   .form-card{grid-template-columns:minmax(0,1fr)}
   .side-card{position:static;order:-1}
+  .flow-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow-step:nth-child(2):after{display:none}
   .hero-inner{padding:52px 18px 62px}
   .form-wrap{padding:0 18px 64px}
   form{padding:24px 18px}
@@ -89,6 +103,8 @@ footer{padding:28px 20px;color:var(--muted);background:#f0eadf;font-size:13px}
   .nav-link{font-size:13px}
   .hero-copy{font-size:16px}
   .choice-grid{grid-template-columns:minmax(0,1fr)}
+  .flow-steps{grid-template-columns:minmax(0,1fr)}
+  .flow-step:after{display:none}
   .radio-row{display:grid;grid-template-columns:minmax(0,1fr)}
   .radio-row .choice{min-width:0}
   .submit-btn,.back-link{width:100%}
@@ -123,6 +139,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="form-wrap">
     <div class="form-card">
       <form id="diagnosis-form" novalidate>
+        <div class="trust-badges" aria-label="フォームの安心情報">
+          <span class="trust-badge">約30秒で完了</span>
+          <span class="trust-badge">営業電話なし</span>
+          <span class="trust-badge">24時間以内にメール</span>
+        </div>
+
+        <div class="flow-box" aria-label="お申し込み後の流れ">
+          <h2 class="flow-title">お申し込み後の流れ</h2>
+          <ol class="flow-steps">
+            <li class="flow-step"><span class="flow-icon">1</span><strong>フォーム送信<br>約30秒</strong></li>
+            <li class="flow-step"><span class="flow-icon">2</span><strong>担当より24時間以内にメール</strong></li>
+            <li class="flow-step"><span class="flow-icon">3</span><strong>30分オンライン相談</strong></li>
+            <li class="flow-step"><span class="flow-icon">4</span><strong>ご家庭専用の改善ポイントをご提案</strong></li>
+          </ol>
+        </div>
+
         <div class="section">
           <h2 class="section-title">ご連絡先</h2>
           <div class="field">
@@ -133,35 +165,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <label for="name">お名前<span class="required">必須</span></label>
             <input id="name" name="name" type="text" autocomplete="name" required>
           </div>
-          <div class="field">
-            <label for="phone">電話番号<span class="optional">任意</span></label>
-            <p class="help">任意です。電話での連絡を希望される場合のみご入力ください。</p>
-            <input id="phone" name="phone" type="text" inputmode="tel" autocomplete="tel">
-          </div>
         </div>
 
         <div class="section">
           <h2 class="section-title">ご家庭の状況</h2>
-          <div class="field">
-            <label for="family">家族構成<span class="required">必須</span></label>
-            <p class="help">例：夫婦2名、子ども1名 2歳、近隣に両親2名など</p>
-            <textarea id="family" name="family" required></textarea>
-          </div>
-          <div class="field">
-            <label for="area">お住まいのエリア<span class="optional">任意</span></label>
-            <p class="help">現住所を特定できない範囲でご回答いただけますと幸いです。例：東京都世田谷区、神奈川県川崎市、埼玉県の川沿いなど</p>
-            <input id="area" name="area" type="text" autocomplete="address-level2">
-          </div>
           <fieldset>
-            <legend class="legend">該当するものを選択してください<span class="optional">任意</span></legend>
-            <div class="choice-grid">
-              <label class="choice"><input type="checkbox" name="applies" value="乳幼児がいる"><span>乳幼児がいる</span></label>
-              <label class="choice"><input type="checkbox" name="applies" value="高齢者がいる / 近くに住んでいる"><span>高齢者がいる / 近くに住んでいる</span></label>
-              <label class="choice"><input type="checkbox" name="applies" value="ペットがいる"><span>ペットがいる</span></label>
-              <label class="choice"><input type="checkbox" name="applies" value="持病・常備薬がある家族がいる"><span>持病・常備薬がある家族がいる</span></label>
-              <label class="choice"><input type="checkbox" name="applies" value="食物アレルギーがある家族がいる"><span>食物アレルギーがある家族がいる</span></label>
-              <label class="choice"><input type="checkbox" name="applies" value="旧耐震マンション等、耐震性能に不安がある住居に住んでいる"><span>旧耐震マンション等、耐震性能に不安がある住居に住んでいる</span></label>
-              <label class="choice"><input type="checkbox" name="applies" value="その他"><span>その他</span></label>
+            <legend class="legend">家族構成<span class="required">必須</span></legend>
+            <div class="radio-row">
+              <label class="choice"><input type="radio" name="familyType" value="一人暮らし" required><span>一人暮らし</span></label>
+              <label class="choice"><input type="radio" name="familyType" value="夫婦" required><span>夫婦</span></label>
+              <label class="choice"><input type="radio" name="familyType" value="夫婦＋子ども" required><span>夫婦＋子ども</span></label>
+              <label class="choice"><input type="radio" name="familyType" value="三世代" required><span>三世代</span></label>
+              <label class="choice"><input type="radio" name="familyType" value="その他" required><span>その他</span></label>
             </div>
           </fieldset>
         </div>
@@ -169,32 +184,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="section">
           <h2 class="section-title">相談したいこと</h2>
           <fieldset>
-            <legend class="legend">特に相談したいこと<span class="required">必須</span></legend>
+            <legend class="legend">一番困っていること<span class="required">必須</span></legend>
             <div class="choice-grid">
-              <label class="choice"><input type="checkbox" name="consultation" value="備蓄品の量・中身"><span>備蓄品の量・中身</span></label>
-              <label class="choice"><input type="checkbox" name="consultation" value="子ども向けの備え"><span>子ども向けの備え</span></label>
-              <label class="choice"><input type="checkbox" name="consultation" value="親世帯の備え"><span>親世帯の備え</span></label>
-              <label class="choice"><input type="checkbox" name="consultation" value="家具固定"><span>家具固定</span></label>
-              <label class="choice"><input type="checkbox" name="consultation" value="避難方法"><span>避難方法</span></label>
-              <label class="choice"><input type="checkbox" name="consultation" value="家族との連絡手段"><span>家族との連絡手段</span></label>
-              <label class="choice"><input type="checkbox" name="consultation" value="備蓄品の購入代行"><span>備蓄品の購入代行</span></label>
-              <label class="choice"><input type="checkbox" name="consultation" value="訪問診断"><span>訪問診断</span></label>
-              <label class="choice"><input type="checkbox" name="consultation" value="その他"><span>その他</span></label>
+              <label class="choice"><input type="checkbox" name="concerns" value="何を備蓄すればいいかわからない"><span>何を備蓄すればいいかわからない</span></label>
+              <label class="choice"><input type="checkbox" name="concerns" value="備蓄量がわからない"><span>備蓄量がわからない</span></label>
+              <label class="choice"><input type="checkbox" name="concerns" value="家具固定が不安"><span>家具固定が不安</span></label>
+              <label class="choice"><input type="checkbox" name="concerns" value="子どもの備蓄"><span>子どもの備蓄</span></label>
+              <label class="choice"><input type="checkbox" name="concerns" value="ペット対策"><span>ペット対策</span></label>
+              <label class="choice"><input type="checkbox" name="concerns" value="その他"><span>その他</span></label>
             </div>
           </fieldset>
           <div class="field">
-            <label for="preferredDate">無料診断の希望日時<span class="required">必須</span></label>
-            <p class="help">候補を2〜3つご記入ください。例：7/10 19時以降、7/13 午前中など</p>
-            <textarea id="preferredDate" name="preferredDate" required></textarea>
+            <label for="preferredDate">ご相談可能な日時<span class="optional">任意</span></label>
+            <p class="help">平日夜・土日も対応しています。候補を2〜3つご記入ください。</p>
+            <textarea id="preferredDate" name="preferredDate"></textarea>
           </div>
-          <fieldset>
-            <legend class="legend">希望する連絡方法<span class="required">必須</span></legend>
-            <div class="radio-row">
-              <label class="choice"><input type="radio" name="contactMethod" value="メール" required><span>メール</span></label>
-              <label class="choice"><input type="radio" name="contactMethod" value="電話" required><span>電話</span></label>
-              <label class="choice"><input type="radio" name="contactMethod" value="どちらでもよい" required><span>どちらでもよい</span></label>
-            </div>
-          </fieldset>
         </div>
 
         <div class="honeypot" aria-hidden="true">
@@ -202,20 +206,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
         </div>
 
+        <p class="safe-note">営業電話はいたしません。ご入力いただいた内容は無料診断以外には利用いたしません。</p>
+
         <div class="form-actions">
-          <button class="submit-btn" type="submit">無料診断を申し込む</button>
+          <button class="submit-btn" type="submit">30分無料相談を予約する</button>
           <a class="back-link" href="/">LPに戻る</a>
         </div>
         <div id="form-notice" class="notice" role="status" aria-live="polite"></div>
       </form>
 
       <aside class="side-card" aria-label="無料診断の流れ">
-        <h2>入力は3分ほどです。</h2>
-        <p>詳しい住所や診断に不要な個人情報は、ここでは入力不要です。</p>
+        <h2>入力は30秒ほどです。</h2>
+        <p>いま困っていることだけ教えてください。詳しい内容は無料相談で伺います。</p>
         <ul class="side-list">
-          <li>内容確認後、1営業日以内に返信します。</li>
+          <li>内容確認後、24時間以内にメールします。</li>
           <li>無料診断は30分のオンライン面談です。</li>
-          <li>ご家庭の状況に合わせて、備蓄・避難・家具固定の相談ができます。</li>
+          <li>備蓄・家具固定・子どもやペットの備えを整理できます。</li>
         </ul>
       </aside>
     </div>
@@ -266,22 +272,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       return;
     }
 
-    var consultation = getChecked('consultation');
-    if (consultation.length === 0) {
-      showNotice('error', '「特に相談したいこと」を1つ以上選択してください。');
+    var concerns = getChecked('concerns');
+    if (concerns.length === 0) {
+      showNotice('error', '「一番困っていること」を1つ以上選択してください。');
       return;
     }
 
     var payload = {
       email: form.email.value.trim(),
       name: form.name.value.trim(),
-      phone: form.phone.value.trim(),
-      family: form.family.value.trim(),
-      area: form.area.value.trim(),
-      applies: getChecked('applies'),
-      consultation: consultation,
+      familyType: form.familyType.value,
+      concerns: concerns,
       preferredDate: form.preferredDate.value.trim(),
-      contactMethod: form.contactMethod.value,
       website: form.website.value
     };
 
@@ -301,7 +303,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }).catch(function(){
       showNotice('error', '送信できませんでした。時間をおいて再度お試しください。');
       submitButton.disabled = false;
-      submitButton.textContent = '無料診断を申し込む';
+      submitButton.textContent = '30分無料相談を予約する';
     });
   });
 })();
