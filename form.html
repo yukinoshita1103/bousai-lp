@@ -224,6 +224,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var form = document.getElementById('diagnosis-form');
   var notice = document.getElementById('form-notice');
   var submitButton = form.querySelector('.submit-btn');
+  var hasStarted = false;
 
   function showNotice(type, message) {
     notice.className = 'notice is-' + type;
@@ -233,6 +234,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function getChecked(name) {
     return Array.prototype.slice.call(form.querySelectorAll('input[name="' + name + '"]:checked')).map(function(input){
       return input.value;
+    });
+  }
+
+  function trackFormStart() {
+    if (hasStarted) return;
+    hasStarted = true;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'form_start'
     });
   }
 
@@ -291,6 +301,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       submitButton.textContent = '30分無料相談を予約する';
     });
   });
+
+  form.addEventListener('input', trackFormStart, {once: true});
+  form.addEventListener('change', trackFormStart, {once: true});
 })();
 </script>
 </body>
