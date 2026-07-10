@@ -12,10 +12,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TDXNCJTG');</script>
 <!-- End Google Tag Manager -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({event: 'form_view'});
-</script>
 <style>
 :root{--ink:#14201f;--muted:#65736f;--line:#dbe5e0;--paper:#fbf7ee;--white:#fff;--teal:#0f766e;--tealDark:#0b4f49;--orange:#e15b2d;--amber:#f5b84b;--gold:#c99a3f;--mist:#edf6f3;--danger:#b42318;--shadow:0 20px 60px rgba(20,32,31,.12)}
 *{box-sizing:border-box}
@@ -219,12 +215,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
+<script src="/assets/tracking.js"></script>
 <script>
 (function(){
   var form = document.getElementById('diagnosis-form');
   var notice = document.getElementById('form-notice');
   var submitButton = form.querySelector('.submit-btn');
-  var hasStarted = false;
 
   function showNotice(type, message) {
     notice.className = 'notice is-' + type;
@@ -237,20 +233,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }
 
-  function trackFormStart() {
-    if (hasStarted) return;
-    hasStarted = true;
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'form_start'
-    });
-  }
-
   function redirectAfterTracking() {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'form_submit'
-    });
     window.setTimeout(function(){
       window.location.href = '/thanks';
     }, 800);
@@ -268,6 +251,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     var concerns = getChecked('concerns');
     if (concerns.length === 0) {
+      if (window.KBTracking) {
+        window.KBTracking.trackFormError('concerns', 'required');
+      }
       showNotice('error', '「一番困っていること」を1つ以上選択してください。');
       return;
     }
@@ -296,14 +282,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       showNotice('success', '送信しました。完了画面に移動します。');
       redirectAfterTracking();
     }).catch(function(){
+      if (window.KBTracking) {
+        window.KBTracking.trackFormError('api', 'submission_failed');
+      }
       showNotice('error', '送信できませんでした。時間をおいて再度お試しください。');
       submitButton.disabled = false;
       submitButton.textContent = '30分無料相談を予約する';
     });
   });
 
-  form.addEventListener('input', trackFormStart, {once: true});
-  form.addEventListener('change', trackFormStart, {once: true});
 })();
 </script>
 </body>
