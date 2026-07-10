@@ -241,26 +241,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="contact" class="cta"><div class="container cta-inner"><div><p class="section-kicker">START</p><h2><span class="keep">まずは無料で、</span><span class="keep">我が家の危険度を確認。</span></h2><p><span class="keep">フォーム送信後、</span><span class="keep">担当者より24時間以内にご返信します。</span><span class="keep">売り込みではなく、</span><span class="keep">ご家庭の現状確認から始めます。</span></p><div class="preform-trust"><div><span>営業電話なし</span>メールで日程調整</div><div><span>入力1分</span>短いフォームだけ</div><div><span>個人情報</span>診断以外で利用しません</div></div></div><a class="btn btn-primary js-cta-track" data-cta-location="footer" href="/form">我が家の危険度を無料診断する</a></div></section>
 </main>
 <footer><div class="footer-inner"><span>© 家庭防災設計</span><span>東大卒防災士監修で、ご家庭に合わせた防災インフラを設計します。 <a href="/privacy-policy">プライバシーポリシー</a></span></div></footer>
-<script>
-document.querySelectorAll('.btn-primary[href]').forEach(function(button){
-  button.classList.add('js-cta-track');
-  if (!button.dataset.ctaLocation) {
-    button.dataset.ctaLocation = button.closest('.hero') ? 'hero' : button.closest('.site-header') ? 'header' : 'cta';
-  }
-  button.addEventListener('click', function(){
-    var eventParams = {
-      event_category: 'engagement',
-      event_label: button.dataset.ctaLocation,
-      link_url: button.href
-    };
-    if (typeof gtag === 'function') {
-      gtag('event', 'cta_click', eventParams);
-    }
-    if (window.dataLayer && Array.isArray(window.dataLayer)) {
-      window.dataLayer.push({event: 'cta_click', cta_location: button.dataset.ctaLocation, link_url: button.href});
-    }
-  });
-});
-</script>
+<script src="/assets/tracking.js"></script>
 </body>
 </html>
