@@ -280,6 +280,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         throw new Error('送信に失敗しました');
       }
       showNotice('success', '送信しました。完了画面に移動します。');
+      if (window.KBTracking) {
+        window.KBTracking.prepareFormSuccess('diagnosis-form');
+      }
       redirectAfterTracking();
     }).catch(function(){
       if (window.KBTracking) {
