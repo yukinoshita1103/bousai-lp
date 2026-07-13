@@ -7,6 +7,8 @@
   };
 
   var sent = {};
+  var PENDING_SUBMISSION_KEY = 'kb_pending_submission';
+  var PROCESSED_SUBMISSIONS_KEY = 'kb_processed_submissions';
 
   function getParam(url, names) {
     for (var i = 0; i < names.length; i += 1) {
@@ -76,6 +78,83 @@
       referrer: document.referrer || '',
       variant_id: CONFIG.variantId
     }, attribution);
+  }
+
+  function sessionGet(key) {
+    try {
+      return window.sessionStorage.getItem(key);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function sessionSet(key, value) {
+    try {
+      window.sessionStorage.setItem(key, value);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function sessionRemove(key) {
+    try {
+      window.sessionStorage.removeItem(key);
+    } catch (error) {}
+  }
+
+  function readJson(key, fallback) {
+    try {
+      return JSON.parse(sessionGet(key) || '') || fallback;
+    } catch (error) {
+      return fallback;
+    }
+  }
+
+  function createSubmissionId() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+      return window.crypto.randomUUID();
+    }
+    return 'submission_' + Date.now() + '_' + Math.random().toString(36).slice(2, 11);
+  }
+
+  function prepareFormSuccess(formId) {
+    var submission = {
+      submission_id: createSubmissionId(),
+      variant_id: CONFIG.variantId,
+      form_id: formId || 'diagnosis-form'
+    };
+    sessionSet(PENDING_SUBMISSION_KEY, JSON.stringify(submission));
+    return submission;
+  }
+
+  function processedSubmissions() {
+    var items = readJson(PROCESSED_SUBMISSIONS_KEY, []);
+    return Array.isArray(items) ? items : [];
+  }
+
+  function markSubmissionProcessed(submissionId) {
+    var items = processedSubmissions().filter(function(item){
+      return item !== submissionId;
+    });
+    items.unshift(submissionId);
+    sessionSet(PROCESSED_SUBMISSIONS_KEY, JSON.stringify(items.slice(0, 20)));
+  }
+
+  function consumePendingSubmission() {
+    var pending = readJson(PENDING_SUBMISSION_KEY, null);
+    if (!pending || !pending.submission_id) {
+      return null;
+    }
+
+    if (processedSubmissions().indexOf(pending.submission_id) !== -1) {
+      sessionRemove(PENDING_SUBMISSION_KEY);
+      return null;
+    }
+
+    markSubmissionProcessed(pending.submission_id);
+    sessionRemove(PENDING_SUBMISSION_KEY);
+    return pending;
   }
 
   function track(eventName, params, options) {
@@ -185,6 +264,7 @@
   window.KBTracking = {
     config: CONFIG,
     track: track,
+    prepareFormSuccess: prepareFormSuccess,
     trackFormError: function(fieldName, errorType) {
       track('form_error', {
         form_id: 'diagnosis-form',
@@ -204,7 +284,14 @@
     } else if (path === '/form' || path === '/form.html') {
       bindForm();
     } else if (path === '/thanks' || path === '/thanks.html') {
-      track('form_success', {}, {onceKey: 'form_success'});
+      var submission = consumePendingSubmission();
+      if (submission) {
+        track('form_success', {
+          submission_id: submission.submission_id,
+          variant_id: submission.variant_id || CONFIG.variantId,
+          form_id: submission.form_id || 'diagnosis-form'
+        }, {onceKey: 'form_success_' + submission.submission_id});
+      }
     }
   });
 })();
