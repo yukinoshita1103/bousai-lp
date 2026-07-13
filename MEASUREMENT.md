@@ -22,7 +22,7 @@ Current variant:
 | `form_start` | First focus into a form field |
 | `form_error` | Required/type/API/custom form error |
 | `form_submit` | Form submit attempt |
-| `form_success` | `/thanks` page load |
+| `form_success` | `/thanks` page consumes a pending successful submission |
 
 ## Common parameters
 
@@ -51,6 +51,7 @@ variant_id
 | `lp_scroll`, `form_scroll` | `scroll_percent` |
 | `cta_click` | `cta_id`, `cta_location`, `link_url` |
 | `form_view`, `form_start`, `form_submit`, `form_error` | `form_id` |
+| `form_success` | `submission_id`, `form_id` |
 | `form_start`, `form_error` | `field_name` |
 | `form_error` | `error_type` |
 
@@ -67,6 +68,9 @@ variant_id
 
 - `form_submit` means the submit button was attempted.
 - `form_success` means the lead was actually completed and should be used as the main conversion.
+- `form_success` only fires when the form API returns success, stores a pending submission in `sessionStorage`, and the `/thanks` page consumes it.
+- The pending submission is deleted and its `submission_id` is marked as processed before `dataLayer.push`, so reloads, direct `/thanks` visits, and browser back/forward navigation do not duplicate `form_success`.
+- A second successful form submission creates a new `submission_id`, allowing one new `form_success` event.
 - Scroll events are deduplicated per page view.
 - Attribution parameters are read from UTM parameters and Google Ads click IDs, then persisted in `sessionStorage` during the session.
 - `cta_id` is normalized to `hero`, `middle`, `bottom`, or `floating`.
