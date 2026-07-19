@@ -2,7 +2,7 @@
   'use strict';
 
   var CONFIG = {
-    variantId: '2026-07-11_lp_v1',
+    variantId: '2026-07-20_lp_v4_offer_clarity_early_value',
     scrollThresholds: [25, 50, 75, 90]
   };
 
@@ -206,7 +206,7 @@
     if (button.dataset.ctaId) return button.dataset.ctaId;
     var location = button.dataset.ctaLocation || '';
     if (location === 'hero') return 'hero';
-    if (location === 'header' || button.closest('.site-header')) return 'floating';
+    if (location === 'header' || location === 'mobile-sticky' || button.closest('.site-header')) return 'floating';
     if (location === 'footer' || button.closest('#contact') || button.closest('footer')) return 'bottom';
     return 'middle';
   }
@@ -238,13 +238,17 @@
     track('form_view', {form_id: form.id}, {onceKey: 'form_view'});
     bindScroll('form_scroll', 'form_scroll');
 
-    form.addEventListener('focusin', function(event){
+    function trackFormStart(event) {
       var target = event.target;
       if (!target || target.name === 'website') return;
       if (target.matches('input, textarea, select')) {
         track('form_start', {form_id: form.id, field_name: target.name || target.id || ''}, {onceKey: 'form_start'});
       }
-    });
+    }
+
+    form.addEventListener('focusin', trackFormStart);
+    form.addEventListener('input', trackFormStart);
+    form.addEventListener('change', trackFormStart);
 
     form.addEventListener('submit', function(){
       track('form_submit', {form_id: form.id});
