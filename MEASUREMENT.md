@@ -7,7 +7,7 @@ Update `variantId` in that file for every measurable LP release.
 Current variant:
 
 ```text
-2026-07-11_lp_v1
+2026-07-20_lp_v4_offer_clarity_early_value
 ```
 
 ## Events
